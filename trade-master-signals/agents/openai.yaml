@@ -1,0 +1,4 @@
+interface:
+  display_name: "Trade Master Signals"
+  short_description: "Infer setups, scan tickers, and render watchlist charts"
+  default_prompt: "Use $trade-master-signals to infer trade-master setups from sample posts, translate them into scanner-ready rules, and generate annotated daily candle charts for the resulting watchlist."
