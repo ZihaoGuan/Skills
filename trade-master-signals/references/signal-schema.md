@@ -36,6 +36,28 @@ confirmation_conditions:
 invalidation_conditions:
   - condition
 
+catalyst_context:
+  catalyst:
+  timing:
+  edge_logic:
+
+position_sizing:
+  single_name_limit:
+  typical_size:
+  basket_limit:
+  conviction_overweights:
+    - rule
+
+management_framework:
+  entry_tactics:
+    - tactic
+  exit_scenarios:
+    - scenario
+  event_day_rules:
+    - rule
+  reassessment_timing:
+    - rule
+
 trade_master_terms:
   - original phrase
 
@@ -71,6 +93,15 @@ Record optional evidence that strengthens conviction but may not be mandatory.
 
 - `invalidation_conditions`
 Record what would make the setup fail or no longer qualify.
+
+- `catalyst_context`
+Use this when the post is organized around a catalyst such as earnings, not just around chart structure. Preserve the event, the timing window, and why the master believes the asymmetric edge exists.
+
+- `position_sizing`
+Use this when the master gives capital-allocation rules. Keep exact single-name caps, typical sizing bands, basket limits, and any conviction-overweight guidance.
+
+- `management_framework`
+Use this when the post teaches execution after entry rather than only the trigger. Preserve entry tactics, scenario-based exits, event-day behavior, and when thesis re-evaluation is allowed.
 
 - `trade_master_terms`
 Preserve the author's words so the skill can learn each master's vocabulary over time.

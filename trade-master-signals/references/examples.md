@@ -1915,6 +1915,7 @@ Original post:
 Observed context:
 
 - The core idea is a `buy RS on weakness` setup on the daily chart rather than a weak stock bounce
+- The setup implies a tactical intraday cooling-off phase, often described by the master as a `string of red` on the `30-minute` chart inside a stock that is still behaving like a leader
 - A lower-timeframe `30 min pivot` is used to define the actual entry with tight risk
 - The strong follow-through gap the next morning validates the setup and shows the advantage of the tighter-risk trigger
 - After the initial move, the rising `8 ema` is identified as a constructive pullback zone for a later or secondary entry
@@ -1936,12 +1937,14 @@ timeframe: daily thesis with 30-minute execution trigger
 pattern_sequence:
   - stock shows leadership and relative strength despite a controlled pullback or pause
   - broader swing setup remains constructive rather than damaged
+  - a `string of red` or similar controlled intraday fade cools off the move without breaking the higher-timeframe thesis
   - a 30-minute pivot creates a defined, tight-risk entry inside the larger setup
   - stock follows through strongly, including gap-up continuation the next session
   - later pullbacks toward the rising 8 EMA become preferred follow-on entry zones
 
 trigger_conditions:
   - stock qualifies as an RS-on-weakness candidate on the higher timeframe
+  - intraday pullback shows controlled cooling-off rather than a broken trend
   - lower-timeframe pivot forms with clearly defined nearby risk
   - entry is still close enough to the pivot that the stop remains tight
 
@@ -1951,12 +1954,13 @@ confirmation_conditions:
   - price respects the rising 8 EMA on later pullbacks
 
 invalidation_conditions:
-  - lower-timeframe pivot fails and breaks the defined risk level
+  - lower-timeframe pivot fails and breaks the recent `30-minute` low or equivalent intraday risk marker
   - daily structure weakens enough that the RS-on-weakness thesis no longer holds
   - 8 EMA pullback fails to act as support after the move confirms
 
 trade_master_terms:
   - buying RS on weakness
+  - string of red
   - 30 min pivot
   - $1.50 risk entry
   - gapping up over 5% this morning
@@ -1988,7 +1992,34 @@ risk_notes: lower-timeframe pivot entries can improve reward/risk substantially,
 notes: this family formalizes how the master can pair a daily RS-on-weakness thesis with a lower-timeframe trigger and then use the 8 EMA as the next constructive support test
 ```
 
-## Example 24: ROIV
+## Example 24: High Tight Flag rule and 30-minute pivot context
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> Focus on stocks that have moved `100%` or more in `8 weeks or less` as the foundational requirement for a true `HTF`. The move signals institutional urgency, a game-changing catalyst, and the possibility of a powerful second leg if the correction stays below roughly `25%`.
+
+Observed context:
+
+- Here `HTF` refers to `High Tight Flag`, not merely `higher timeframe`
+- The `100%+ in 8 weeks or less` rule is presented as a mechanical filter for true market leaders rather than a vague momentum preference
+- The low-depth correction matters because it shows supply remains tight after the initial explosive run
+- This explains why a later `30 minute pivot` entry can have unusually high expectancy: the tactical pullback sits inside a larger coiled-spring continuation pattern
+
+Normalized strategy contribution:
+
+- `high-tight-flag-30m-pivot`
+
+Suggested interpretation notes:
+
+- Preserve the numeric `HTF` gate exactly when this master uses it
+- Treat the `30 minute pivot` as a tactical anti-chase entry method that belongs inside a true leader, not as a standalone intraday pattern on random names
+- When both ideas appear together, keep two layers explicit:
+  - `HTF` or other higher-quality swing context explains why the stock deserves attention
+  - `30 minute pivot` explains where risk can be defined tightly
+
+## Example 25: ROIV
 
 Trade master: `Elite Swing Traders`
 
@@ -3661,4 +3692,148 @@ example_posts:
 confidence: high
 risk_notes: structured watchlist funnels can improve focus and consistency, but they still depend on disciplined promotion criteria, so loose standards can turn the pipeline into clutter instead of edge
 notes: this workflow should sit above Venu's individual setups and management rules, because it describes how candidates are sourced, ranked, and staged before actual trade execution
+```
+
+## Example 41: Jimmy Huli pre-earnings basket planning
+
+Trade master: `Jimmy Huli`
+
+Original post:
+
+> `财报后建仓是"用确定性换溢价"，你已经知道结果，但你也有可能完全错过涨幅最大的那一段。`
+>
+> `财报前建仓是开盲盒，你不知道结果，但承担风险换取 beat 后的非线性回报。`
+>
+> `比如如果认为 beat 概率 > 60% 且赔率 ≥ 2:1，财报前建仓有意义；如果认为公司本身质量极好，完全可以长期持有而不用担心财报后的波动，现在买也是合理的。`
+>
+> `单只仓位上限 3%，平均控制在 1-2%`
+>
+> `6 家合计上限 10-12%`
+>
+> `选 2-3 家自己最有 conviction、入场价最舒服的，作为 6 家里的高配，可以放置 2% - 3%`
+>
+> `原则上来说，所有进场用限价单埋伏，接受不成交。除非当前价格已经非常合理。`
+>
+> `Beat & raise（最理想）：开盘冲高时先 止盈 1/3，剩下 2/3 看 guidance 是否能支撑趋势延续。`
+>
+> `In-line / 小幅 beat：通常没有方向，按预定的 stop / take-profit 区间机械化处理`
+>
+> `Miss 或 guide 下修：如果跌破入场前设好的关键支撑（前一周低点 / SMA50 / 前期密集成交区下沿），第一时间出`
+>
+> `任何情景：财报当天不重新评估 thesis，只执行预案；要重评估，等情绪冷却 1-2 个交易日`
+
+Observed context:
+
+- This is a reusable earnings-event framework rather than a single ticker chart pattern
+- The post distinguishes the edge and tradeoff of entering before earnings versus after earnings
+- The decision rule depends on explicit perceived probability and payoff skew, not just enthusiasm for the stock
+- Risk is controlled at the portfolio level as well as the single-name level
+- The master defines different post-report actions for strong, middling, and bad earnings outcomes
+- Behavioral discipline is part of the edge: predefine the plan, then avoid same-day emotional thesis rewrites
+
+Normalized strategy:
+
+- `pre-earnings-basket-planning-framework`
+
+Suggested strategy record:
+
+```yaml
+trade_master: Jimmy Huli
+strategy_name: pre-earnings-basket-planning-framework
+ticker_example: six-name earnings basket
+setup_type: pre-earnings catalyst-positioning and management framework
+market_bias: selectively bullish pre-earnings participation
+timeframe: days before earnings through 1-2 trading days after the report
+
+pattern_sequence:
+  - compare the tradeoff between pre-earnings uncertainty and post-earnings certainty
+  - allow pre-earnings entry only when perceived beat odds and reward/risk skew are favorable enough
+  - size each name modestly and cap total basket exposure across all pre-earnings positions
+  - prefer limit-order entries and avoid forcing additional size into already-owned names
+  - respond differently after earnings depending on beat and raise, in-line results, or miss and guide-down outcomes
+  - avoid thesis re-evaluation on earnings day and wait 1-2 trading days before reassessing
+
+trigger_conditions:
+  - trader believes beat probability is greater than 60%
+  - perceived payoff skew is at least 2:1
+  - company quality or conviction is high enough to justify taking event risk
+  - preplanned support and exit references are defined before entry
+
+confirmation_conditions:
+  - entry price is favorable enough that limit orders can be left in place without chasing
+  - only 2-3 highest-conviction names receive above-average size inside the basket
+  - the trader has a written scenario plan for strong, neutral, and weak earnings outcomes
+
+invalidation_conditions:
+  - position sizing would exceed 3% in one name or 10-12% across the basket
+  - key support such as the prior-week low, SMA50, or the lower edge of a dense volume area fails after bad earnings
+  - trader is improvising on earnings day instead of following the preplanned response
+
+catalyst_context:
+  catalyst: earnings report
+  timing: build selectively before earnings and reassess only after 1-2 trading days post-event
+  edge_logic: accept uncertainty before the event only when the perceived probability of a beat and the upside skew justify the gap risk
+
+position_sizing:
+  single_name_limit: 3%
+  typical_size: 1-2%
+  basket_limit: 10-12% across six names
+  conviction_overweights:
+    - allow 2-3 highest-conviction names to be sized at 2-3%
+
+management_framework:
+  entry_tactics:
+    - prefer resting limit orders and accept non-fills rather than chase
+    - do not automatically add to positions that were already owned before earnings
+  exit_scenarios:
+    - on beat and raise, take profit on one-third into opening strength and let guidance decide whether the remaining two-thirds can trend
+    - on in-line results or a small beat, manage mechanically with the preplanned stop and take-profit range
+    - on miss or guide-down, exit quickly if price breaks the preplanned support level
+  event_day_rules:
+    - do not re-evaluate the thesis on earnings day; execute the plan only
+  reassessment_timing:
+    - wait 1-2 trading days before reassessing after the emotional reaction cools
+
+trade_master_terms:
+  - pre-earnings
+  - use certainty to pay premium
+  - open blind box
+  - beat probability > 60% and odds >= 2:1
+  - single-name position cap 3%
+  - typical size 1-2%
+  - six-name basket cap 10-12%
+  - highest conviction 2-3 names
+  - limit order ambush
+  - beat and raise
+  - guidance decides the rest
+  - in-line or small beat
+  - miss or guide down
+  - key support
+  - do not re-evaluate thesis on earnings day
+  - reassess after 1-2 trading days
+  - expected move +/-10-25%
+  - better to miss than lose principal
+
+scan_translation:
+  scanner_features_needed:
+    - earnings-calendar tagging
+    - pre-earnings watchlist support
+    - position-sizing or basket-budget overlays outside the scanner
+    - support-level storage before the event
+    - post-earnings outcome labeling for beat, in-line, or miss
+  candidate_rules:
+    - use the scanner to source names approaching earnings with strong enough quality or conviction characteristics
+    - keep the portfolio-budget and scenario-planning layer outside pure chart scanning if the project cannot express it directly
+    - store preplanned support references before the event so the exit rule is explicit
+  open_questions:
+    - how the user's broader workflow wants to estimate `beat probability`
+    - whether basket exposure tracking lives in the scanner project or in a separate portfolio layer
+    - how the project should encode guidance strength versus headline earnings results
+
+example_posts:
+  - Jimmy Huli / pre-earnings framework / sizing, scenario exits, and no same-day thesis rewrite
+
+confidence: high
+risk_notes: pre-earnings positioning can produce highly asymmetric upside, but gap risk is large and must be budgeted at both the name and portfolio level; the framework loses integrity if sizing discipline or event-day execution discipline breaks
+notes: this should be stored as a catalyst-event execution framework, not flattened into a generic earnings setup or a normal chart-entry pattern
 ```

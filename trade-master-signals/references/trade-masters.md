@@ -94,6 +94,8 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `blue skies breakout`: breakout into open price territory with little or no overhead supply once all-time highs are cleared
 - `closed at high of day`: the session finishes with strength, suggesting buyers stayed in control into the close and pressure remains pointed upward
 - `30 min pivot`: a lower-timeframe pivot used to refine timing and define a tighter-risk entry within a broader swing setup
+- `string of red`: a sequence of red `30-minute` candles inside an otherwise strong uptrend, signaling healthy short-term cooling-off rather than true structural failure
+- `beachball underwater`: a strong stock being temporarily pushed down by noise or short-term pressure and likely to pop once that pressure is released
 - `$1.50 risk entry`: the setup is attractive partly because the lower-timeframe trigger keeps the stop distance tight and explicit
 - `gapping up over 5% this morning`: strong next-session follow-through confirms the earlier setup and rewards the tight-risk entry
 - `8 ema pullback pretty good place to look for an entry`: after the initial pivot and expansion, the rising 8 EMA becomes a preferred follow-on support zone for additional or later entries
@@ -133,6 +135,7 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `index-top-process-rounding-rollover`
 - `rs-led-ath-blue-skies-breakout`
 - `rs-on-weakness-ltf-pivot-continuation`
+- `high-tight-flag-30m-pivot`
 - `rs-on-weakness-8-week-support-pivot`
 - `breakout-validation-fakeout-filter`
 - `sector-etf-top-down-blue-skies-breakout`
@@ -176,6 +179,9 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - This master also appears to value leadership before confirmation. When RS strength appears ahead of a breakout through all-time highs, treat that as a higher-quality continuation setup rather than a generic resistance breakout.
 - When RS leads before price and the stock also closes at the high of the day beneath key resistance, treat that as added confirmation that breakout pressure is building rather than fading.
 - This master may use a lower-timeframe pivot to refine risk inside a broader `buy RS on weakness` thesis. Preserve the swing-level quality signal and the lower-timeframe trigger separately so the entry logic does not get flattened.
+- When this master teaches the `30 minute pivot`, preserve the full tactical sequence: higher-timeframe leadership or `HTF` context, a short-term `string of red` cooling-off phase, the actual pivot back up, and the tight stop beneath the recent `30-minute` low.
+- For this master, `HTF` should default to `high tight flag` unless the surrounding context clearly means higher timeframe. When the post defines `HTF` numerically, preserve the exact gate of `100%+` in `8 weeks or less` and less than `25%` correction as the mechanical filter for true market leaders.
+- The `30 minute pivot` is especially important as an anti-chasing tactic. Preserve its role as a patience tool for momentum names that are strong enough to buy on controlled weakness but dangerous to chase at extension.
 - A clean retest of 8-week support in a true momentum leader can be stored as a secondary entry idea inside the same family, but mark clearly when that retest logic comes from user interpretation rather than explicit master wording.
 - This master also teaches how to tell a real breakout from a trap. Volume expansion, successful re-tests, decisive closes, and modest follow-through buffers should be treated as validation layers that sit on top of many existing setup families.
 - This master also uses a top-down workflow. When a sector ETF is compressing or breaking out, treat that as a screening signal to hunt the strongest constituent charts rather than evaluating every stock in isolation.
@@ -346,3 +352,49 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `Clear distribution` should remain explicit. In this framework, a Stage 2 advance is not considered over just because the stock looks extended; heavy selling above the 30-day volume average matters more.
 - This master also appears to use a structured candidate funnel. Preserve the movement from broad discovery lists into a tighter FocusList and then into sub-watchlists with different actionability.
 - Keep `Watchlist A` and `Watchlist B` distinct. One is for high-quality actionable names, while the other holds still-interesting names that are currently too extended.
+
+## Jimmy Huli
+
+### Vocabulary
+
+- `pre-earnings`: taking the position before the company reports rather than waiting for the result
+- `post-earnings`: reacting after the report is out, using more certainty but often paying a higher price
+- `open blind box`: pre-earnings positioning accepts result uncertainty in exchange for nonlinear upside if the company beats
+- `use certainty to pay premium`: post-earnings positioning sacrifices some upside for more information
+- `beat probability > 60% and odds >= 2:1`: the minimum asymmetry test for a pre-earnings trade to make sense
+- `company quality is excellent`: a separate reason to own the stock even if the earnings event itself is noisy
+- `single-name position cap 3%`: hard maximum allocation for one pre-earnings name
+- `typical size 1-2%`: default allocation band for most names in the basket
+- `six-name basket cap 10-12%`: total portfolio exposure ceiling across the full pre-earnings basket
+- `highest conviction 2-3 names`: the small subset allowed to be sized above average
+- `limit order ambush`: prefer resting limit orders and accept non-fills instead of chasing
+- `already in position do not force add`: existing holdings do not need automatic top-ups before earnings
+- `beat and raise`: the ideal earnings outcome because both reported numbers and forward guidance confirm strength
+- `take 1/3 into the opening strength`: scale out partially on the initial post-earnings surge
+- `guidance decides the rest`: keep or exit the remainder based on whether forward guidance supports continuation
+- `in-line or small beat`: middling outcome with less directional edge, so management should stay mechanical
+- `miss or guide down`: bearish earnings outcome requiring fast respect for the preplanned risk level
+- `key support`: the preplanned exit reference such as prior-week low, `SMA50`, or the lower edge of a high-volume area
+- `do not re-evaluate thesis on earnings day`: execute the plan rather than improvising emotionally in the event session
+- `reassess after 1-2 trading days`: wait for emotions and price discovery to settle before revisiting the thesis
+- `expected move +/-10-25%`: reminder that these trades carry large gap risk and should not be treated casually
+- `better to miss than lose principal`: novice-friendly warning to skip the setup if research depth or emotional tolerance is insufficient
+
+### Known Strategy Families
+
+- `pre-earnings-basket-planning-framework`
+
+### Notes
+
+- This master is teaching a catalyst-event playbook, not just an entry pattern. Preserve the framework even when no single ticker chart is the star.
+- The key asymmetry is explicit: pre-earnings trades accept uncertainty only when perceived `beat` odds and payoff skew are favorable enough.
+- Keep pre-earnings and post-earnings logic separate. The distinction is part of the philosophy, not a minor implementation detail.
+- Position sizing is core to the framework, not optional color. Preserve single-name caps, basket caps, and the rule that only a few highest-conviction names may be oversized.
+- `Limit order ambush` is an execution preference, not a ranking signal. Store it under entry tactics or management rather than as a stock-selection filter.
+- Existing positions should be treated differently from fresh entries when the master says not to force adds ahead of earnings.
+- The exit plan is explicitly scenario-based. Preserve the different responses for `beat and raise`, `in-line or small beat`, and `miss or guide down`.
+- Guidance matters as much as the headline beat. Do not collapse `beat and raise` into a generic positive earnings outcome.
+- The stop logic is anchored to preplanned structural references such as the prior-week low, `SMA50`, or the lower edge of a dense volume zone.
+- The instruction not to re-evaluate thesis on earnings day is a reusable behavioral rule. Store it separately from the later rule to reassess after `1-2 trading days`.
+- The expected-move warning is a risk-budgeting input. Treat it as a reminder that basket exposure and name sizing must absorb gap risk.
+- This framework includes an explicit suitability warning for less experienced traders. Preserve that as participation guidance instead of stripping it out during normalization.
