@@ -63,6 +63,11 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `RS line`: price-relative line, interpreted in this skill as `stock price / benchmark price`
 - `RS Rating`: rank-style relative-performance score, distinct from the plotted RS line
 - `RS new high before price`: the relative-strength line leads by making a new high before price fully does, signaling leadership
+- `Historical RS new highs`: prior bars where the RS line marked new highs and can be studied as precedents rather than only as live signals
+- `Historical RS new highs before price`: prior bars where the RS line led price before breakout, used to study how leaders behaved in the past
+- `blue dots`: chart markers showing historical RS new highs, used to study how prior leaders behaved before price fully expanded
+- `flip between RS modes`: compare live and historical RS-leadership views in the indicator to study whether the current chart resembles prior breakout leaders
+- `RS new high on the weekly`: higher-timeframe relative-strength leadership that often appears before a larger breakout phase
 - `pretty extended`: price has moved far enough from key support or moving averages that the reward/risk becomes less favorable for new buying
 - `ATR% Multiple from the 50`: an extension measure comparing distance from the 50-period moving average to ATR-based expansion
 - `trim it back`: reduce position size because the move is stretched, even if the broader thesis remains intact
@@ -92,10 +97,34 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `the best setup in the wrong environment is a losing trade`: setup selection is subordinate to regime context and tape quality
 - `setting up under ATH resistance`: price is consolidating or tightening directly below all-time-high overhead resistance
 - `blue skies breakout`: breakout into open price territory with little or no overhead supply once all-time highs are cleared
+- `1-5 risk to reward`: risk one unit to potentially make five, creating a large expectancy cushion even with a low win rate
+- `mathematical cushion`: the expectancy advantage created by asymmetric upside, allowing many small losses to be offset by a few large winners
+- `break even around 17%`: approximate win-rate threshold where a `1:5` payoff structure stops losing money before fees and slippage
+- `single winner wipes out five losses`: a shorthand way to explain how asymmetric upside can overpower multiple controlled losing trades
+- `power trends`: explosive continuation moves that provide the outsized gains needed to make the expectancy model work
+- `cutting winners too short`: exiting too early and therefore failing to capture the large upside needed by the framework
+- `no overhead supply`: no prior holders are trapped above the current price, so there is less natural selling pressure into strength
+- `trapped sellers`: prior buyers at higher prices who may sell into rallies once they get back to breakeven
+- `everyone is in a profit position`: in blue-sky territory, all existing holders are above cost rather than waiting to get out at breakeven
+- `bag holders selling into strength`: overhead supply from trapped holders that can slow or cap ordinary breakouts
+- `rapid, parabolic move`: the type of high-velocity expansion the master expects once price clears into true blue-sky territory
+- `institutional demand regardless of price`: strong sponsorship that keeps accumulating even after the stock reaches all-time highs
+- `use prior ATH or 8-day EMA as risk`: manage the breakout using the reclaimed all-time-high zone or the fast moving average as the key invalidation reference
 - `closed at high of day`: the session finishes with strength, suggesting buyers stayed in control into the close and pressure remains pointed upward
 - `30 min pivot`: a lower-timeframe pivot used to refine timing and define a tighter-risk entry within a broader swing setup
 - `string of red`: a sequence of red `30-minute` candles inside an otherwise strong uptrend, signaling healthy short-term cooling-off rather than true structural failure
 - `beachball underwater`: a strong stock being temporarily pushed down by noise or short-term pressure and likely to pop once that pressure is released
+- `holding flat while the market is crashing`: the stock is absorbing broad-market selling pressure instead of breaking down with the indices
+- `market hand lets go`: the index pressure stabilizes or reverses, removing the main force suppressing the stock
+- `pop out of the water`: the stock resumes expansion quickly once broad-market pressure eases
+- `higher lows while the market makes lower lows`: constructive relative action showing demand is stronger in the stock than in the tape
+- `RS line at new highs before price`: leadership is visible in the relative-performance line even before the stock itself fully clears price resistance
+- `high volume on up days`: upside participation is showing institutional conviction rather than a weak drift
+- `21 day EMA`: a short-term trend support reference that can define constructive pullback support inside a leader
+- `8 week EMA`: a higher-timeframe trend support reference that often marks where true leaders stay supported during market pressure
+- `flush the 21ema`: a pullback that undercuts or pressures through the daily 21 EMA without necessarily damaging the higher-timeframe leader structure
+- `reclaim the pivot`: price turns back up through the key pivot or trigger level after the flush, which is the actual buy signal
+- `buy on the way back up`: wait for price to recover and confirm the pivot reclaim rather than buying while the pullback is still actively breaking lower
 - `$1.50 risk entry`: the setup is attractive partly because the lower-timeframe trigger keeps the stop distance tight and explicit
 - `gapping up over 5% this morning`: strong next-session follow-through confirms the earlier setup and rewards the tight-risk entry
 - `8 ema pullback pretty good place to look for an entry`: after the initial pivot and expansion, the rising 8 EMA becomes a preferred follow-on support zone for additional or later entries
@@ -137,6 +166,7 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - `rs-on-weakness-ltf-pivot-continuation`
 - `high-tight-flag-30m-pivot`
 - `rs-on-weakness-8-week-support-pivot`
+- `beachball-underwater-rs-pop`
 - `breakout-validation-fakeout-filter`
 - `sector-etf-top-down-blue-skies-breakout`
 
@@ -163,6 +193,7 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - Daily index warnings can also be structural when they involve losing the 200 SMA after an EMA crossover. Treat those as a distinct bearish regime family, not merely another rally-failure comment.
 - Repeated support tests and bear-flag structure can sharpen a weak-tape warning even before the 200 SMA is fully lost. Preserve that escalation inside the daily bearish regime families.
 - Relative strength on weakness appears to be one of this master's highest-conviction edges. When ranking overlapping setups, prefer examples where RS holds up during orderly pullbacks, tests of support, or controlled contractions.
+- When this master emphasizes flipping between RS modes, preserve that as an analysis workflow: current-bar RS leadership helps with timing, while historical RS-leadership markers help confirm that the structure resembles prior winners.
 - When this master posts a basket of names as examples of `8 week support pivots`, treat that grouped list as direct evidence of a reusable family rather than a loose watchlist.
 - An `8 week support pivot` should remain distinct from lower-timeframe `30 min pivot` execution logic and from gap-support pivots, even though all three can sit under the broader `buy RS on weakness` umbrella.
 - Use the definitions in [rs-glossary.md](rs-glossary.md) when this master refers to `RS`, `RS line`, or `RS Rating`. Do not collapse those into `RSI` or other generic momentum shorthand.
@@ -170,6 +201,7 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - The master's gap logic appears two-sided: buying constructive pullbacks into gap support when they occur, and respecting the raw bullishness of gaps that do not backfill at all. Both should influence ranking inside earnings-gap and continuation families.
 - This master also treats earnings season as a discovery engine for future leaders. New earnings-driven setups should be viewed not just as isolated trades, but as a pipeline for identifying leadership early.
 - This master also appears to respect relative-strength leadership as a quality signal and ATR-based extension as a management signal. A stock can remain bullish while no longer being in the best add zone.
+- In correcting markets, this master appears to use `RS` as both a watchlist filter and a timing mechanism. First narrow attention to names that resist the market's damage, then use RS leadership to decide which of those names is most likely to erupt first once the tape improves.
 - This master also gives participation guidance during degraded tape. Statements about not forcing trades or preserving mental capital should be stored as exposure and pacing heuristics, not mistaken for directional trade calls.
 - When this master says a 200 SMA test looks inevitable or warns about a weekly gravestone doji, preserve that as stacked caution inside the existing market-regime layer even if the post is not a fresh stock-specific setup.
 - This master can also express conditional short setups on individual names. When the post frames the 200 SMA as reclaimed resistance rather than support, preserve that as a separate stock-specific bearish family instead of merging it into broad market context.
@@ -177,12 +209,23 @@ Use this file as the living registry of known trade masters, vocabulary, and str
 - This master also teaches market-top process, not just chart triggers. Rounding tops, head-and-shoulders style failure, and thinning breadth should be treated as early regime-deterioration evidence that can precede the cleaner breakdown families.
 - Environment appears to be the final filter for this master. Even strong setups should be down-ranked or skipped when market context is hostile, because situational awareness overrides isolated chart quality.
 - This master also appears to value leadership before confirmation. When RS strength appears ahead of a breakout through all-time highs, treat that as a higher-quality continuation setup rather than a generic resistance breakout.
+- Blue-sky breakouts appear to be one of this master's premier momentum setups because open price territory removes overhead supply and lets institutional demand express itself more cleanly than in ordinary resistance breakouts.
+- If the post explicitly says the market is correcting while leaders hold above key moving averages or prior bases, preserve that as a pre-bottom leadership screen rather than collapsing it into a generic bullish stock comment.
 - When RS leads before price and the stock also closes at the high of the day beneath key resistance, treat that as added confirmation that breakout pressure is building rather than fading.
 - This master may use a lower-timeframe pivot to refine risk inside a broader `buy RS on weakness` thesis. Preserve the swing-level quality signal and the lower-timeframe trigger separately so the entry logic does not get flattened.
 - When this master teaches the `30 minute pivot`, preserve the full tactical sequence: higher-timeframe leadership or `HTF` context, a short-term `string of red` cooling-off phase, the actual pivot back up, and the tight stop beneath the recent `30-minute` low.
 - For this master, `HTF` should default to `high tight flag` unless the surrounding context clearly means higher timeframe. When the post defines `HTF` numerically, preserve the exact gate of `100%+` in `8 weeks or less` and less than `25%` correction as the mechanical filter for true market leaders.
 - The `30 minute pivot` is especially important as an anti-chasing tactic. Preserve its role as a patience tool for momentum names that are strong enough to buy on controlled weakness but dangerous to chase at extension.
+- A weekly RS new high should up-rank a setup even before price fully breaks out, especially when the chart also shows the same tight, leader-like look this master associates with past winners.
 - A clean retest of 8-week support in a true momentum leader can be stored as a secondary entry idea inside the same family, but mark clearly when that retest logic comes from user interpretation rather than explicit master wording.
+- In this `8 week support pivot` family, the buy trigger can be the reclaim after the flush rather than the first touch of support. If the post makes that explicit, preserve the sequence: weekly pullback, daily `21ema` flush, pivot reclaim, then entry.
+- The `beachball underwater` metaphor should be treated as a distinct leadership-under-pressure family, not just colorful wording for any strong chart. Preserve the market pullback, the stock's refusal to break, and the expected acceleration once index pressure eases.
+- For this master, `beachball underwater` is strongest when several clues stack together: the `RS line` leads price, the stock stays flat or makes higher lows while the market makes lower lows, upside days attract heavier volume, and pullbacks stay supported by the `21 day EMA` or `8 week EMA`.
+- Keep this family separate from a generic `buy RS on weakness` note when the post explicitly defines the broad-market comparison. The tape itself is part of the trigger quality, not just background commentary.
+- If the post says the broader indices have not bottomed yet, preserve the RS behavior as an early-leadership framework rather than pretending it is already a confirmed breakout trigger. The point is pre-positioning the watchlist before the trend turn.
+- Historical RS blue dots are evidence, not the entry by themselves. Preserve them as precedent markers that strengthen confidence in leadership, while the actual trade still waits for the reclaim and turn back up.
+- This master also frames reward-to-risk as an expectancy discipline, not just a prettier entry. If the post teaches `1:5` asymmetry, preserve the low required win rate, the role of a few `power trends`, and the need to avoid cutting winners too short.
+- If the post says the setup needs room to run without overhead resistance, preserve that as a structural gate for trade selection rather than vague bullish enthusiasm.
 - This master also teaches how to tell a real breakout from a trap. Volume expansion, successful re-tests, decisive closes, and modest follow-through buffers should be treated as validation layers that sit on top of many existing setup families.
 - This master also uses a top-down workflow. When a sector ETF is compressing or breaking out, treat that as a screening signal to hunt the strongest constituent charts rather than evaluating every stock in isolation.
 - This master may also use tactical candle and pivot language inside a larger continuation thesis. A bullish engulfing candle working back toward the next pivot should be treated as a continuation-quality clue, especially after prior gap-support or EMA support has already held.

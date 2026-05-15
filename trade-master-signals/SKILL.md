@@ -34,6 +34,8 @@ If the post discusses management rather than entry, preserve the management rule
 If the post advises preserving mental capital, staying cautious, or not forcing trades, preserve that as master-level participation guidance rather than forcing it into a directional setup family.
 If the post explicitly frames a conditional short entry on a single stock, preserve it as a stock-specific bearish setup rather than collapsing it into index-regime commentary.
 If the post mentions `RS`, `RS line`, `RS Rating`, or phrases like `RS new high before price`, interpret them using [references/rs-glossary.md](references/rs-glossary.md) instead of generic trading shorthand.
+If the post or screenshot comes from a specific RS indicator workflow, preserve the indicator mode when it matters. `RS New Highs`, `RS New Highs Before Price`, and their `Historical` variants are related but not interchangeable.
+If the post uses a metaphor such as `beachball underwater`, preserve the metaphor and translate the full regime interaction explicitly: broad-market pressure is the force pushing down, the stock's RS is the stored upward tension, and the expected move is the pop once the market stops pressing.
 If the post explains how tops or bottoms develop over time, preserve that as regime-framework knowledge. Educational posts about buyer exhaustion, breadth deterioration, or rolling-over structure should inform market-context interpretation even when they are not tied to a precise entry trigger.
 If the post is a simplified system diagram rather than a ticker-specific chart, preserve the geometry explicitly: the reference level, the undercut or reclaim, the moving-average role, the intended entry zone, and the stop placement.
 If the post is a checklist or acronym-based stock-selection framework, preserve each gate separately and distinguish company-quality filters from market-regime filters and from actual chart-entry triggers.
@@ -47,6 +49,7 @@ If the post teaches a catalyst playbook rather than a chart trigger, preserve th
 If the post describes a multi-stage watchlist workflow, preserve the pipeline order, the source watchlists, the selection criteria used to promote names, and the meaning of each final bucket.
 If the post states a general rule about environment or situational awareness, preserve it as a regime-gating heuristic. Rules about the setup being secondary to the tape should influence ranking and participation across all strategy families.
 If the post combines a higher-timeframe setup with a lower-timeframe pivot for risk definition, preserve both layers explicitly. The lower timeframe may refine entry quality without changing the broader setup family.
+If the post explicitly says to wait for price to turn back up, reclaim the pivot, or buy on the way back up rather than during the decline, preserve that reclaim-after-flush sequence as the actual trigger instead of flattening it into a generic support touch.
 If the post teaches how to validate or reject a breakout, preserve those rules as breakout-quality heuristics. Volume confirmation, re-tests, candle closes, and buffer rules can sit on top of multiple setup families rather than replacing them.
 If the post links a sector ETF setup to individual stock selection, preserve the top-down workflow explicitly. The ETF can act as the group-level trigger while the constituent chart provides the specific trade candidate.
 If the post is a basket of tickers described as examples of the same setup, treat the grouped list as cross-sectional evidence for a reusable pattern rather than as a loose watchlist with no shared structure.
@@ -86,6 +89,7 @@ When the user also wants chart output, add:
 - Preserve timeframe if the chart or post implies it.
 - Keep multi-timeframe roles explicit when the post references them, such as monthly support defining context and daily structure defining the trigger.
 - Preserve higher-timeframe support language as its own structure. An `8 week support pivot` is not interchangeable with a generic daily bounce.
+- Preserve market-versus-stock tension when the post defines it. A stock staying flat, making higher lows, or keeping its `RS line` near highs while `SPY` or `QQQ` make lower lows is different from an ordinary pullback and should remain explicit in the setup.
 - Preserve diagrammatic system posts as reusable frameworks. If the master teaches with a sketch instead of a real ticker chart, keep the structural roles of the level, the undercut, the reclaim, the `8 EMA`, the entry, and the stop.
 - Preserve acronym and checklist frameworks as selection layers. A framework like `CAN SLIM` should sit above chart entries by defining which names and which environments qualify before timing is considered.
 - Preserve named pattern libraries as timing frameworks. A master can use a broad taxonomy such as O'Neil base patterns to choose the entry archetype, while a separate selection framework decides which stocks deserve attention first.
@@ -106,6 +110,8 @@ When the user also wants chart output, add:
 - Preserve trade-master vocabulary even when normalizing it.
 - Treat repeated master-level preference statements as priority heuristics. If a master says a certain style continues to be their best trade, preserve that as a weighting cue across relevant strategy families.
 - Preserve relative-strength leadership and extension management as separate signals. A post can simultaneously describe why a name is a leader and why it is no longer in the best entry zone.
+- Preserve timeframe on RS leadership cues. `RS new high on the weekly` is not just a stronger daily note; it is a higher-timeframe leadership condition that should usually carry more weight and more patience around the actual trigger.
+- Preserve `beachball underwater` posts as leadership-under-pressure setups rather than as generic breakout notes. The defining ingredients are broad-market weakness, the stock refusing to break down, RS leadership or RS-line strength, and a likely acceleration once market pressure eases.
 - Preserve neutral or cautionary participation guidance as a separate layer of regime interpretation. Advice about not forcing trades or preserving mental capital should influence exposure posture even when it does not create a new chart pattern.
 - Preserve regime-framework posts separately from trigger posts. Explanations of topping processes, breadth deterioration, or rolling-over psychology can sharpen how existing market-context families are weighted even before a breakdown fully resolves.
 - Preserve environment-first rules explicitly. If the master says the best setup can still fail in the wrong environment, treat market context as a gating layer over otherwise attractive setups.
@@ -149,13 +155,17 @@ Use [references/scan-integration.md](references/scan-integration.md) as the cano
 
 Use `scripts/render_watchlist_candles.py` when the user wants daily candle charts for one ticker, a list of tickers, or a structured watchlist derived from trade-master notes.
 
+Use `scripts/render_sector_rotation_rrg.py` when the user wants a sector-level rotation map that compares multiple sector ETFs against one benchmark on a single weekly relative-strength canvas.
+
 Prefer this flow:
 
 1. Normalize the watchlist into JSON first.
 2. Preserve explicit trigger prices from the post when given.
-3. Run the script against the JSON file or ticker list.
-4. Review failures ticker by ticker instead of silently dropping them.
-5. If the user wants a combined image, use the script's split montage pages rather than shrinking too many charts into one export.
+3. Preserve explicit `entry_price`, `stop_price`, and any secondary support or add level when the master defines them. Do not force the renderer to infer a stop if the post already gives a cleaner invalidation level.
+4. Prefer real higher-timeframe references when the setup depends on them. For `HTF`, `8 week support`, or `30 minute pivot` families, keep weekly and intraday roles explicit instead of flattening them into generic daily support.
+5. Run the script against the JSON file or ticker list.
+6. Review failures ticker by ticker instead of silently dropping them.
+7. If the user wants a combined image, use the script's split montage pages rather than shrinking too many charts into one export.
 
 Supported inputs:
 
@@ -169,7 +179,7 @@ Useful options:
 - `--lookback 120`
 - `--split-pages 3`
 
-The watchlist JSON schema is intentionally simple:
+The watchlist JSON schema should stay compact, but it can carry explicit execution fields when the master gives them:
 
 ```json
 [
@@ -179,10 +189,28 @@ The watchlist JSON schema is intentionally simple:
     "summary": "Precision power supplier tied to semiconductor manufacturing and AI data centers, flagging near highs.",
     "master_note": "$AEIS flagging at highs driven by its critical role in providing precision power for semiconductor manufacturing and AI data centers.",
     "trigger_price": 397.44,
-    "trigger_label": "Watch level"
+    "trigger_label": "Watch level",
+    "entry_style": "htf_breakout",
+    "entry_price": 397.44,
+    "entry_label": "Pivot reclaim",
+    "entry_timeframe": "daily",
+    "secondary_entry_price": 384.10,
+    "secondary_entry_label": "Weekly 8 EMA support",
+    "secondary_entry_timeframe": "weekly",
+    "stop_price": 378.90,
+    "stop_label": "Flag low invalidation",
+    "stop_timeframe": "daily"
   }
 ]
 ```
+
+Field guidance:
+
+- Keep `trigger_price` and `trigger_label` as the broad watch level or reclaim level.
+- Use `entry_style` for families such as `30m_pivot`, `8w_support_pivot`, `htf_breakout`, `gap_support`, or `ema8_pullback`.
+- Use `entry_price` and `entry_label` when the preferred buy point is more specific than the broad trigger.
+- Use `secondary_entry_price` and `secondary_entry_label` for fallback support entries such as `8 EMA`, `EMA21`, `weekly 8 EMA`, or `gap support`.
+- Use `stop_price` and `stop_label` whenever the post gives a clear invalidation level. The renderer should treat explicit stops as authoritative and only infer stops when they are missing.
 
 The script writes:
 
@@ -190,6 +218,27 @@ The script writes:
 - `index.html`
 - `run_summary.json`
 - optional `watchlist_page_<N>.svg` split montage pages
+
+## Sector Rotation Map
+
+Use `scripts/render_sector_rotation_rrg.py` when the user wants a board-level view of where sector leadership is rotating.
+
+Prefer this flow:
+
+1. Use the official 11 sector ETFs by default unless the user requests a custom ETF universe.
+If the user wants a more trading-oriented rotation map, prefer the built-in industry basket instead of the broad 11-sector basket.
+2. Keep the benchmark explicit, usually `SPY`, and preserve any user request to use `QQQ` or another benchmark.
+3. Use weekly data and keep the trail length explicit, with `12 weeks` as the default.
+4. Label the output as `RRG-style` or `sector rotation map` unless the user explicitly wants a different wording. The public documentation explains the concept, but the proprietary JdK implementation details are not fully open.
+5. Treat the map as context and ranking evidence. It should complement, not replace, single-name setup charts.
+
+Useful options:
+
+- `--output-dir output/sector_rotation_2026-05-15`
+- `--benchmark SPY`
+- `--trail-weeks 12`
+- `--period 3y`
+- `--universe industry`
 
 ## RS Glossary
 

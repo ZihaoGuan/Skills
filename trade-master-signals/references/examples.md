@@ -3837,3 +3837,413 @@ confidence: high
 risk_notes: pre-earnings positioning can produce highly asymmetric upside, but gap risk is large and must be budgeted at both the name and portfolio level; the framework loses integrity if sizing discipline or event-day execution discipline breaks
 notes: this should be stored as a catalyst-event execution framework, not flattened into a generic earnings setup or a normal chart-entry pattern
 ```
+
+## Example 42: Elite Swing Traders beachball underwater framework
+
+Trade master: `Elite Swing Traders`
+
+Original post:
+
+> `In technical analysis, especially within momentum trading circles, the "beachball underwater" is a powerful visual metaphor used to describe a stock showing extreme Relative Strength (RS) despite a broad market pullback.`
+>
+> `The Market Pullback: When the broad market indices drop, they act like a hand pushing everything downward.`
+>
+> `The Beachball (RS): A high-RS stock wants to go higher. If it stays flat or only drops slightly while the market is crashing, it is like holding a beachball deep underwater.`
+>
+> `The "Pop": As soon as the market "hand" lets go (the index stabilizes or turns up), the stock with high RS tends to "pop" out of the water, moving higher and faster than the rest of the market.`
+>
+> `How to Spot It`
+>
+> `1. RS Line at New Highs`
+>
+> `2. Tight Consolidation`
+>
+> `3. High Volume on Up Days`
+>
+> `4. Moving Average Support`
+
+Observed context:
+
+- This is a reusable educational framework rather than a one-ticker callout
+- The setup quality depends on comparison with the broad market, not on the stock in isolation
+- The stock is expected to resist downside pressure better than `SPY`, `QQQ`, or another benchmark during a market pullback
+- The key evidence stack is explicit: `RS line` leadership, tight price behavior, constructive volume, and support at the `21 day EMA` or `8 week EMA`
+- The anticipated move is a continuation pop once index pressure eases, not a bottom-fishing reversal in a weak name
+
+Normalized strategy:
+
+- `beachball-underwater-rs-pop`
+
+Suggested strategy record:
+
+```yaml
+trade_master: Elite Swing Traders
+strategy_name: beachball-underwater-rs-pop
+ticker_example: framework post
+setup_type: leadership-under-pressure continuation
+market_bias: bullish after broad-market pressure eases
+timeframe: daily with weekly support context allowed
+
+pattern_sequence:
+  - broad market pulls back, breaks lower, or makes lower lows
+  - candidate stock holds flat, pulls back only modestly, or makes higher lows instead of breaking with the market
+  - RS line leads by making or threatening new highs before price fully clears resistance
+  - price stays in a tight consolidation or controlled base while pressure persists in the indices
+  - upside days show heavier volume, signaling sponsorship and absorption
+  - pullbacks hold constructive dynamic support such as the 21 day EMA or 8 week EMA
+  - once the market stabilizes or turns up, the stock expands faster than the tape
+
+trigger_conditions:
+  - broad-market weakness is active and observable in the benchmark
+  - stock materially outperforms that weakness on an RS basis
+  - RS line is near or at a fresh lookback high before price has fully broken out
+  - price remains tight rather than volatile or damaged
+  - support at the 21 day EMA, 8 week EMA, or equivalent leadership support zone is still intact
+
+confirmation_conditions:
+  - higher lows or sideways tightening while the market makes lower lows
+  - upside sessions print above-average volume
+  - market pressure eases and the stock responds with immediate upside expansion
+  - breakout or continuation move occurs without first losing the key support zone
+
+invalidation_conditions:
+  - stock starts breaking down in step with the market instead of resisting it
+  - RS line loses leadership before price resolves
+  - tight consolidation fails and loses the 21 day EMA, 8 week EMA, or other referenced support
+  - upside expansion never arrives after the market stabilizes
+
+trade_master_terms:
+  - beachball underwater
+  - Relative Strength
+  - market hand
+  - pop out of the water
+  - RS line at new highs
+  - tight consolidation
+  - high volume on up days
+  - moving average support
+  - 21 day EMA
+  - 8 week EMA
+
+scan_translation:
+  scanner_features_needed:
+    - benchmark-relative performance or RS line
+    - market-regime comparison versus SPY, QQQ, or chosen benchmark
+    - price-tightness or consolidation detection
+    - higher-low versus lower-low comparison
+    - volume expansion detection on up days
+    - 21 day EMA and weekly support detection
+  candidate_rules:
+    - require active market pullback or benchmark weakness as context
+    - rank stocks higher when RS line is at a new high before price
+    - prefer names staying flat or making higher lows while the benchmark makes lower lows
+    - require tight structure and intact moving-average support
+    - upgrade candidates when upside days show stronger-than-average volume
+  open_questions:
+    - which benchmark the user's scanner project treats as canonical for RS comparison
+    - how the project defines a valid tight consolidation mechanically
+    - whether weekly support such as the 8 week EMA is directly available or needs a proxy
+
+example_posts:
+  - Elite Swing Traders / beachball underwater / RS leadership during broad-market pullback
+
+confidence: high
+risk_notes: this setup loses its edge when the stock stops resisting the tape or when the market damage becomes severe enough to break leadership support, so relative behavior and support integrity matter more than the metaphor alone
+notes: this family should be stored separately from generic `buy RS on weakness` because the broad-market comparison is part of the setup logic, not just a background condition
+```
+
+## Example 43: Elite Swing Traders RS indicator workflow and weekly leadership cue
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> `You can flip between RS new high, RS high before price, Historical RS new high and historical RS new high before price.`
+>
+> `Buying RS on weakness using the 30 min pivot will change your life.`
+>
+> `RS new high on the weekly. Has that look like so many others have had before breaking out.`
+
+Observed context:
+
+- This is partly a tool-usage post and partly a setup-quality post
+- The master is explicitly using the TradingView RS indicator modes as a study workflow, not just citing one isolated signal
+- The weekly RS new-high cue is meant as leadership evidence before the breakout, not proof that the breakout has already happened
+- The `30 min pivot` remains the tactical entry trigger, while the weekly RS behavior is the higher-timeframe reason to care
+- Historical RS markers are being used to compare the current chart with prior winners
+
+Normalized strategy contribution:
+
+- `rs-on-weakness-ltf-pivot-continuation`
+- `rs-led-ath-blue-skies-breakout`
+
+Suggested interpretation notes:
+
+- Preserve the indicator mode if the post or screenshot makes it visible: live RS leadership and historical RS leadership do different jobs
+- Treat `RS new high on the weekly` as a higher-timeframe leadership clue that should usually up-rank the chart even before price clears resistance
+- When the master says the chart `has that look like so many others have had before breaking out`, preserve that as comparative pattern evidence rather than as confirmation that breakout already triggered
+- Keep the two layers separate:
+  - weekly RS leadership explains why the stock resembles past leaders
+  - `30 min pivot` explains how the entry risk is kept tight on the actual trade
+
+## Example 44: Elite Swing Traders correcting-market RS filter and timing framework
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> `In a correcting market, tracking Relative Strength (RS) is essential because it acts as a filter to identify resilient leadership before the broader indices bottom.`
+>
+> `While most stocks fall during a correction, those with high RS tend to hold steady or decline significantly less than the market average.`
+>
+> `By focusing on stocks that hold above key moving averages or prior bases while the market makes new lows, you are essentially narrowing your watchlist to the candidates most likely to lead the next bull cycle.`
+>
+> `Historical market leaders often exhibit an RS line making new highs before the stock's actual price does`
+>
+> `When the market eventually turns and the selling pressure evaporates, these high RS names typically spring higher first and with the most velocity.`
+
+Observed context:
+
+- This is a reusable market-correction framework rather than a ticker-specific setup alert
+- The post defines `RS` as an upstream watchlist filter before it defines it as an entry-timing aid
+- The correction itself is part of the logic: the best candidates are stocks that hold above key moving averages or prior bases while the indices keep making lower lows
+- `RS line making new highs before price` is presented as early leadership evidence, not as a fully confirmed breakout by itself
+- The expected outcome is that these names become the first and fastest movers once broad-market selling pressure finally fades
+
+Normalized strategy contribution:
+
+- `beachball-underwater-rs-pop`
+- `rs-led-ath-blue-skies-breakout`
+
+Suggested interpretation notes:
+
+- Preserve two layers separately:
+  - correction-phase RS resilience filters the watchlist down to likely future leaders
+  - RS-line leadership before price helps time which candidate is ripest when the market turns
+- If the post says the market is still making new lows, do not flatten the framework into a simple breakout setup; the key edge is identifying leadership before the bottom is obvious
+- Treat `holds above key moving averages or prior bases` as structural quality evidence inside the correction, not just casual bullish color
+- `spring higher first and with the most velocity` should be stored as an expected resolution pattern for leader-quality names after the regime improves
+
+## Example 45: MOD weekly pullback, EMA21 flush, and pivot reclaim
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> `Here's an example of how to buy RS on weakness.`
+>
+> `The blue dots represent Historical RS new high.`
+>
+> `The 8 week pullback (flushing the 21ema) and then reclaiming the pivot triggers the trade.`
+>
+> `You wait and buy on the way back up not when it's still going down.`
+
+Observed context:
+
+- The chart is a concrete single-name example built around `MOD`
+- Historical RS new highs are shown as blue dots on the price chart, which serve as leadership evidence rather than the direct trigger
+- The stock remains leader-like enough that an `8 week` pullback is treated as constructive context, even though the daily `21ema` gets flushed during the dip
+- The actual entry is delayed until price reclaims the pivot on the way back up
+- This post is especially valuable because it clarifies what *not* to do: do not buy during the active downswing just because the stock is touching support
+
+Normalized strategy:
+
+- `rs-on-weakness-8-week-support-pivot`
+
+Suggested strategy record:
+
+```yaml
+trade_master: Elite Swing Traders
+strategy_name: rs-on-weakness-8-week-support-pivot
+ticker_example: MOD
+setup_type: relative-strength weekly pullback with daily flush and pivot reclaim
+market_bias: bullish
+timeframe: weekly pullback context with daily trigger
+
+pattern_sequence:
+  - stock has already shown leadership, reinforced by historical RS new-high markers
+  - price pulls back into higher-timeframe 8-week support context
+  - daily chart flushes below or through the 21 EMA during the pullback
+  - price stops going down, stabilizes, and turns back up
+  - pivot is reclaimed on the way back up
+  - the reclaim, not the raw pullback, triggers the entry
+
+trigger_conditions:
+  - stock still behaves like a leader despite the pullback
+  - pullback occurs into 8-week support context rather than after full structural failure
+  - daily flush of the 21 EMA is absorbed rather than extended
+  - price reclaims the pivot or equivalent trigger level after turning back up
+
+confirmation_conditions:
+  - historical RS new-high markers support the case that the stock has been acting like a leader before the pullback
+  - reclaim candle or immediate follow-through shows price is moving back up through the trigger
+  - stock quickly gets back above the 21 EMA and preserves the higher-timeframe support structure
+
+invalidation_conditions:
+  - stock keeps falling after the 21 EMA flush instead of reclaiming constructive posture
+  - pivot reclaim fails immediately and price loses the local recovery low
+  - pullback slices decisively through the 8-week support structure and stops behaving like a controlled reset
+
+trade_master_terms:
+  - buy RS on weakness
+  - blue dots
+  - Historical RS new high
+  - 8 week pullback
+  - flushing the 21ema
+  - reclaiming the pivot
+  - buy on the way back up
+
+scan_translation:
+  scanner_features_needed:
+    - RS leadership evidence
+    - historical RS new-high markers or proxy
+    - weekly support interaction detection
+    - daily 21 EMA flush detection
+    - pivot reclaim detection after a local low
+  candidate_rules:
+    - prefer leader-quality names pulling back into 8-week support context
+    - allow a controlled flush through the daily 21 EMA without calling the setup broken immediately
+    - require the actual buy signal to be the reclaim back up through the pivot
+    - down-rank setups where price is still moving down and no reclaim has happened yet
+  open_questions:
+    - how the user's scanner project should approximate `Historical RS new high` if it cannot mark them directly
+    - whether the 8-week support should be modeled via a true weekly EMA, a daily proxy, or a broader support shelf
+    - how to define the reclaim pivot mechanically in the existing project
+
+example_posts:
+  - Elite Swing Traders / MOD / 8 week pullback flushes 21ema then reclaims pivot
+
+confidence: high
+risk_notes: this setup can look attractive too early, so the key discipline is waiting for the turn and pivot reclaim; buying during the active flush weakens the edge and often expands risk unnecessarily
+notes: this example sharpens the existing `rs-on-weakness-8-week-support-pivot` family by making the trigger sequence explicit: leadership evidence first, pullback second, reclaim-triggered entry last
+```
+
+## Example 46: Elite Swing Traders 1-to-5 expectancy framework
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> `The advantage of a 1-5 risk to reward ratio is the significant "mathematical cushion" it provides`
+>
+> `With this expectancy, you only need a win rate of roughly 17% to break even.`
+>
+> `By risking $1 to make $5, a single winning trade can wipe out five consecutive losses`
+>
+> `To achieve a 1-5 return, you must identify high probability setups like a Blue Sky Breakout or a tight consolidation that have the technical room to run without hitting overhead resistance.`
+>
+> `It prevents the common pitfall of "cutting winners too short" while strictly capping losses.`
+
+Observed context:
+
+- This is a portfolio-expectancy and execution framework, not a single chart pattern
+- The core edge is asymmetry: a few outsized winners can offset many small controlled losses
+- The post makes win-rate math part of the framework, not just a motivational aside
+- Setup selection matters because only certain structures have enough open technical room to support a true `1:5` outcome
+- The management lesson is as important as the entry lesson: the framework fails if winners are cut too early
+
+Normalized strategy contribution:
+
+- `rs-led-ath-blue-skies-breakout`
+- `earnings-flag-tight-continuation`
+
+Suggested interpretation notes:
+
+- Preserve `1:5 risk to reward` as an expectancy rule and portfolio-discipline framework rather than a standalone entry trigger
+- Keep the math explicit when the master states it: low break-even win rate, large cushion, and the role of a few `power trends`
+- If the post names `Blue Sky Breakout` or `tight consolidation`, treat those as example setup families that can satisfy the asymmetry requirement, not as decorative examples
+- Preserve `technical room to run without overhead resistance` as a setup-quality gate for ranking and filtering candidates
+- Preserve `cutting winners too short` as the management mistake this framework is explicitly trying to avoid
+
+## Example 47: Elite Swing Traders blue-sky breakout framework
+
+Trade master: `Elite Swing Traders`
+
+Original post summary:
+
+> `Trading "blue sky" breakouts when a stock clears all historical resistance to reach ATHs is a premier strategy for momentum traders because of the absence of overhead supply.`
+>
+> `When a stock enters blue sky territory, every single person who owns the shares is in a profit position.`
+>
+> `This eliminates the psychological pressure of bag holders selling into strength`
+>
+> `For a stock to reach prices it has never seen before, it generally requires significant "beat and raise" earnings or a massive shift in industry tailwinds`
+>
+> `you can use the prior ATH or a short term moving average, like the 8-day EMA, as a definitive level to manage your risk while the upside remains mathematically uncapped.`
+
+Observed context:
+
+- This is a broader explanatory framework for why `blue sky` breakouts work, not just a one-ticker callout
+- The post sharpens the supply-demand logic: no overhead supply, no trapped sellers, and cleaner institutional price discovery
+- `beat and raise` earnings and major industry tailwinds are named as typical catalysts behind true blue-sky expansions
+- The post also clarifies risk definition: use the prior ATH zone or the `8-day EMA` as the main invalidation reference
+- The upside is framed as open-ended, but the risk management remains tight and concrete
+
+Normalized strategy:
+
+- `rs-led-ath-blue-skies-breakout`
+
+Suggested strategy record:
+
+```yaml
+trade_master: Elite Swing Traders
+strategy_name: rs-led-ath-blue-skies-breakout
+ticker_example: framework post
+setup_type: all-time-high breakout into open price territory
+market_bias: bullish
+timeframe: daily
+
+pattern_sequence:
+  - stock approaches or tests all-time-high resistance with strong relative behavior
+  - catalyst or sponsorship forces continued accumulation near highs
+  - price clears all historical resistance and enters blue-sky territory
+  - lack of overhead supply allows stronger continuation than a normal breakout
+  - risk is managed using the reclaimed ATH zone or the 8-day EMA while the upside remains open-ended
+
+trigger_conditions:
+  - stock is at or just clearing all-time highs
+  - setup has room to run because overhead supply is effectively absent
+  - relative strength or institutional demand context remains strong
+
+confirmation_conditions:
+  - breakout holds above the prior ATH area
+  - 8-day EMA or equivalent fast support continues to guide the move
+  - follow-through shows demand is still overwhelming any residual supply
+
+invalidation_conditions:
+  - breakout fails back below the reclaimed ATH area
+  - fast-moving-average support such as the 8-day EMA is lost decisively
+  - breakout lacks sponsorship and stalls immediately after entering new-high territory
+
+trade_master_terms:
+  - blue sky breakout
+  - no overhead supply
+  - trapped sellers
+  - everyone is in a profit position
+  - bag holders selling into strength
+  - beat and raise
+  - 8-day EMA
+
+scan_translation:
+  scanner_features_needed:
+    - all-time-high detection
+    - RS leadership or sponsorship proxy
+    - breakout follow-through tracking
+    - fast-moving-average support such as 8 EMA
+    - optional catalyst tagging for earnings or sector tailwinds
+  candidate_rules:
+    - prefer names clearing all historical resistance into open territory
+    - up-rank setups with RS leadership already visible before the breakout
+    - require the breakout to hold above the prior ATH zone or the 8 EMA
+    - prefer catalysts or demand conditions consistent with institutional accumulation
+  open_questions:
+    - whether the user's scanner can distinguish a fresh ATH breakout from a merely near-high setup
+    - how to model catalyst context if earnings or sector-tailwind metadata is unavailable
+    - whether the 8-day EMA should be an actual rule or a post-scan chart-management overlay
+
+example_posts:
+  - Elite Swing Traders / blue-sky breakout framework / no overhead supply and 8-day EMA risk
+
+confidence: high
+risk_notes: blue-sky breakouts can still fail, but the framework's edge comes from the absence of trapped-seller overhead and the ability to define risk tightly against the reclaimed ATH area or 8-day EMA while the upside remains open
+notes: this framework deepens `rs-led-ath-blue-skies-breakout` by making the supply, psychology, catalyst, and risk-management logic explicit rather than leaving blue sky as a simple label
+```
